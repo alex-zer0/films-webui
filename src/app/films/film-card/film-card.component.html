@@ -1,0 +1,5 @@
+<a class="film-card" [routerLink]="[film.imdbID]">
+  <img [src]="film.Poster" width="70" height="70" [alt]="film.Title" />
+  <h3 class="film-card__title">{{ film.Title }}</h3>
+  <button class="film-card__btn" mat-flat-button (click)="toggleFilm($event)">{{ search ? 'Add' : 'Remove' }}</button>
+</a>

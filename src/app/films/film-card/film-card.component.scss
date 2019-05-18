@@ -1,0 +1,21 @@
+.film-card {
+  display: flex;
+  align-items: center;
+  padding: .75rem 1rem .75rem .75rem;
+  transition: all .15s ease;
+  text-decoration: none;
+
+  &__title {
+    margin: 0 1rem;
+    color: rgb(0,0,0);
+    flex: 0 1 100%;
+  }
+
+  &__btn {
+    flex: 0 0 auto;
+  }
+
+  &:hover {
+    background-color: rgba(0,0,0,.1);
+  }
+}

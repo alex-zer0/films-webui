@@ -1,0 +1,27 @@
+.films {
+  display: flex;
+  min-height: 100%;
+
+  &__search-panel {
+    flex: 0 1 50%;
+    height: calc(100vh - 2rem);
+    overflow: auto;
+    padding: 0 .5rem 0 0;
+
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+  &__list {
+    flex: 0 1 50%;
+    border-left: 1px solid #ccc;
+  }
+}
+
+.mat-option--movie {
+  height: 4rem;
+  /deep/ .mat-option-text {
+    display: flex;
+    align-items: center;
+  }
+}

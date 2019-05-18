@@ -1,0 +1,24 @@
+
+
+<main class="films">
+  <form [formGroup]="form" class="films__search-panel">
+    <mat-form-field>
+      <input matInput placeholder="Search for a movie..." [matAutocomplete]="auto" formControlName="search">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of searchOptions$ | async" (onSelectionChange)="addToList(option)" class="mat-option--movie">
+          <img [src]="option.Poster" [alt]="option.Title" width="50" height="50" />
+          <span title="{{ option.Title }}" class="ml-1">{{ option.Title }}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <div class="films__list">
+    <ng-container *ngIf="(films$ | async) as films">
+      <app-film-card
+        *ngFor="let film of films"
+        [film]="film"
+        (toggle)="rmFromList($event)">
+      </app-film-card>
+    </ng-container>
+  </div>
+</main>

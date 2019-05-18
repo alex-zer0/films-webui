@@ -1,0 +1,22 @@
+<ng-container *ngIf="(film$ | async) as film; else loading">
+  <article *ngIf="film.imdbID; else notFound">
+    <h1>{{ film.Title }}</h1>
+    <img [src]="film.Poster" width="400" height="400" [alt]="film.Title" />
+    <p>{{ film.Plot }}</p>
+    <section>
+      <h5>Actors</h5>
+      <p>{{ film.Actors }}</p>
+    </section>
+    <section>
+      <h5>Released</h5>
+      <p>{{ film.Released }}</p>
+    </section>
+  </article>
+  <ng-template #notFound>
+    {{ film.Error }}
+  </ng-template>
+</ng-container>
+
+<ng-template #loading>
+  Loading...
+</ng-template>
